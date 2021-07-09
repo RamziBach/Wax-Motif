@@ -140,6 +140,7 @@ strong {
 }
 
 .btn-bg {
+  position: relative;
   font-size: var(--fs-h5);
   font-weight: 700;
   text-decoration: none;
@@ -147,11 +148,21 @@ strong {
   color: var(--clr-light);
   background-color: var(--clr-accent);
   border: 2px solid var(--clr-accent);
-  border-radius: 5px;
+  /* border-radius: 5px; */
   box-shadow: 0 10px 20px rgba(254, 30, 51, 0.49),
     0 6px 6px rgba(254, 30, 51, 0.43), 0 0 100px 5px var(--clr-accent);
   transition: all 0.3s;
 }
+
+/* .btn-bg:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  border-top: 15px solid var(--clr-dark);
+  border-left: 15px solid var(--clr-accent);
+  width: 0;
+} */
 
 .btn-bg:hover,
 .btn-bg:focus {
@@ -168,7 +179,6 @@ strong {
   color: var(--clr-accent);
   background-color: transparent;
   border: 2px solid var(--clr-accent);
-  border-radius: 5px;
   transition: all 0.3s;
 }
 

@@ -20,7 +20,8 @@ const Header = ({ price }) => {
       <div className={styles.container}>
         <div className={styles.parent}>
           <div className={styles.titleContainer}>
-            <h2 className={styles.title}>wax money</h2>
+            <img src="/name.svg" alt="name" className={styles.title} />
+            {/* <h2 className={styles.title}>wax money</h2> */}
           </div>
           <div className={styles.menuContainer}>
             <nav>
