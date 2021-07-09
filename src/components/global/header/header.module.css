@@ -15,8 +15,23 @@
   align-items: center;
 }
 
+.titleContainer,
+.menuContainer,
+.tickerContainer {
+  flex: 1;
+}
+
+.title {
+  font-size: var(--fs-h3);
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+  user-select: none;
+}
+
 .menu {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 2em;
 }
@@ -36,6 +51,7 @@
 
 .tickerContainer {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 0.5em;
 }

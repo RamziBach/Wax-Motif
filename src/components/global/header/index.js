@@ -7,7 +7,10 @@ const Header = ({ price }) => {
       <header className={styles.header}>
         <div className={styles.container}>
           <div className={styles.parent}>
-            <div>
+            <div className={styles.titleContainer}>
+              <h2 className={styles.title}>wax money</h2>
+            </div>
+            <div className={styles.menuContainer}>
               <nav>
                 <ul className={styles.menu}>
                   <li>
