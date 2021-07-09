@@ -30,12 +30,18 @@
   border: 1px solid var(--clr-accent);
 }
 
+.contentImgContainer {
+  position: relative;
+  width: 100px;
+  height: 94.2px;
+}
+
 .contentTitle {
   text-transform: uppercase;
   font-size: var(--fs-h2);
   /* font-weight: 900; */
   line-height: 1;
-  margin: 0;
+  margin: 0.4em 0 0 0;
   color: var(--clr-accent);
 }
 
@@ -83,6 +89,11 @@
 }
 
 @media (max-width: 1600px) {
+  .contentImgContainer {
+    width: 80px;
+    height: 75.4px;
+  }
+
   .title {
     font-size: 5.5rem;
   }
@@ -142,6 +153,11 @@
 }
 
 @media (max-width: 425px) {
+  .contentImgContainer {
+    width: 60px;
+    height: 56.5px;
+  }
+
   .title {
     font-size: 3rem;
   }

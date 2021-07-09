@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useSpring, animated } from 'react-spring';
 import styles from './landing.module.css';
 
@@ -17,6 +18,9 @@ const Landing = () => {
         <div className={styles.container}>
           <div className={styles.grandparent}>
             <div className={styles.content}>
+              <div className={styles.contentImgContainer}>
+                <Image src="/templered.png" alt="temple logo" layout="fill" />
+              </div>
               <h1 className={styles.contentTitle}>
                 hold,
                 <br />
