@@ -1,6 +1,9 @@
 .header {
   margin-bottom: 4em;
   padding: 2em 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
   background-color: var(--clr-dark);
 }
 
@@ -75,10 +78,33 @@
   color: var(--clr-accent);
 }
 
+.mobileContainer {
+  flex: 1;
+  display: none;
+}
+
+.i {
+  font-size: var(--fs-h3);
+  color: var(--clr-light);
+}
+
 @media (max-width: 1600px) {
   .imgContainer {
     width: 40px;
     height: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .menuContainer,
+  .tickerContainer {
+    display: none;
+  }
+
+  .mobileContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
 
