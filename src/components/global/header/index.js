@@ -40,7 +40,7 @@ const Header = ({ price }) => {
           </div>
           <div className={styles.tickerContainer}>
             <div className={styles.imgContainer}>
-              <Image src="/token.jpg" alt="token" layout="fill" />
+              <Image src="/token.png" alt="token" layout="fill" />
             </div>
             <a
               href="https://rally.io/creator/WAXM/"

@@ -3,6 +3,8 @@ import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import Seo from '@components/global/seo';
 import Header from '@components/global/header';
 import Landing from '@components/home/landing';
+import Rally from '@components/home/rally';
+import Footer from '@components/global/footer';
 
 const Home = ({ price }) => {
   const containerRef = useRef(null);
@@ -30,6 +32,8 @@ const Home = ({ price }) => {
         <main data-scroll-container ref={containerRef}>
           <Header price={price} />
           <Landing />
+          <Rally />
+          <Footer />
         </main>
       </LocomotiveScrollProvider>
     </>

@@ -14,7 +14,7 @@ const MobileNav = ({ price, display }) => {
           <a className={styles.btn}>vip</a>
           <div className={styles.waxCoin} aria-label="Waxm coin price">
             <div className={styles.logo}>
-              <Image src="/token.jpg" alt="token" layout="fill" />
+              <Image src="/token.png" alt="token" layout="fill" />
             </div>
             <a
               href="https://rally.io/creator/WAXM/"

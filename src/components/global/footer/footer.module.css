@@ -1,0 +1,35 @@
+.footer {
+  width: 100%;
+  height: 50em;
+  background-image: url('/grid.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.socialsContainer {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+.i {
+  font-size: 1.5rem;
+  color: var(--clr-accent);
+}
+
+.c {
+  opacity: 0.3;
+  font-size: var(--fs-small);
+}
