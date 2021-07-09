@@ -33,6 +33,7 @@
 .contentTitle {
   text-transform: uppercase;
   font-size: var(--fs-h2);
+  /* font-weight: 900; */
   line-height: 1;
   margin: 0;
   color: var(--clr-accent);

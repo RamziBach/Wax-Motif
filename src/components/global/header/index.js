@@ -23,13 +23,9 @@ const Header = ({ price }) => {
               </nav>
             </div>
             <div className={styles.tickerContainer}>
-              <Image
-                src="/token.jpg"
-                alt="token"
-                layout="fixed"
-                width="60"
-                height="60"
-              />
+              <div className={styles.imgContainer}>
+                <Image src="/token.jpg" alt="token" layout="fill" />
+              </div>
               <a
                 href="https://rally.io/creator/WAXM/"
                 target="_blank"
