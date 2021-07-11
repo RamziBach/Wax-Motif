@@ -107,8 +107,17 @@ const Footer = () => {
             </a>
           </div>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} wax motif
+            © Copyright {new Date().getFullYear()} wax motif
           </p>
+          <a
+            href="https://www.dividedsoulsrecords.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Divided Souls Records"
+            aria-label="Divided Souls Records"
+          >
+            <img src="/divided.svg" alt="divided" className={styles.divided} />
+          </a>
         </div>
       </footer>
     </div>

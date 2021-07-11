@@ -35,3 +35,8 @@
   user-select: none;
   text-transform: uppercase;
 }
+
+.divided {
+  width: 4em;
+  opacity: 0.2;
+}
