@@ -33,4 +33,5 @@
   opacity: 0.3;
   font-size: var(--fs-small);
   user-select: none;
+  text-transform: uppercase;
 }
