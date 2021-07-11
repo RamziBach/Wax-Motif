@@ -53,7 +53,7 @@ const Footer = () => {
             </a>
           </div>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} draze force
+            © {new Date().getFullYear()} wax motif
           </p>
         </div>
       </footer>

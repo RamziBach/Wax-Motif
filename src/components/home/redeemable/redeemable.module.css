@@ -37,6 +37,7 @@
 .rewardTitle {
   font-size: var(--fs-h4);
   margin: 0;
+  /* color: var(--clr-accent); */
 }
 
 .rewardDescription {
