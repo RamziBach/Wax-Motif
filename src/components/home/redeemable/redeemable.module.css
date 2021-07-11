@@ -1,0 +1,46 @@
+.redeemable {
+  margin-bottom: 15em;
+}
+
+.container {
+  width: var(--c-width);
+  margin: 0 auto;
+}
+
+.title {
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+}
+
+.grandParent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1em;
+  height: 25em;
+  background-color: rgba(98, 0, 255, 0.1);
+  width: 1228px;
+}
+
+.zIndex {
+  z-index: 2;
+}
+
+.rewardTitle {
+  font-size: var(--fs-h4);
+  margin: 0;
+}
+
+.rewardDescription {
+  color: var(--clr-rgba);
+  max-width: 60ch;
+  margin: 2em 0;
+}

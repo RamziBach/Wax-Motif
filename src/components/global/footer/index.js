@@ -52,7 +52,9 @@ const Footer = () => {
               <FontAwesomeIcon icon={faTwitch} className={styles.i} />
             </a>
           </div>
-          <p className={styles.c}>© {new Date().getFullYear()} draze force</p>
+          <p className={styles.copyright}>
+            © {new Date().getFullYear()} draze force
+          </p>
         </div>
       </footer>
     </div>

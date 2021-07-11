@@ -29,7 +29,8 @@
   color: var(--clr-accent);
 }
 
-.c {
+.copyright {
   opacity: 0.3;
   font-size: var(--fs-small);
+  user-select: none;
 }
