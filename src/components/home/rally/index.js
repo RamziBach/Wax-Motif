@@ -37,7 +37,7 @@ const Rally = () => {
                   className="btn-border"
                   title="Signup at Rally.io"
                 >
-                  Rally.io
+                  Register Rally.io
                 </a>
               </div>
             </div>
@@ -60,7 +60,7 @@ const Rally = () => {
                   className="btn-border"
                   title="Buy $WAXM at Rally.io"
                 >
-                  Buy $WAXM
+                  Purchase $WAXM
                 </a>
               </div>
             </div>
@@ -76,7 +76,7 @@ const Rally = () => {
                 <p className={styles.description}>
                   Hold, sell, trade <br /> or redeem for $WAXM unlocks.
                 </p>
-                <a className="btn-border">Store</a>
+                <a className="btn-border">Store Page</a>
               </div>
             </div>
           </div>
