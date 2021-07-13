@@ -21,7 +21,7 @@ const Footer = () => {
             alt="temple"
             layout="intrinsic"
             width="100"
-            height="100"
+            height="94.2"
           />
           <div className={styles.socialsContainer}>
             <a

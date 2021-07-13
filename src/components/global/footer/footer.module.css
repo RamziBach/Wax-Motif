@@ -27,6 +27,11 @@
 .i {
   font-size: 1.5rem;
   color: var(--clr-accent);
+  transition: all 0.3s;
+}
+
+.i:hover {
+  transform: translate(0, -5px);
 }
 
 .copyright {
