@@ -12,7 +12,7 @@ const Home = ({ price }) => {
 
   return (
     <>
-      <Seo title="RAMZI - HOME" />
+      <Seo title="WAXM - HOME" />
       <LocomotiveScrollProvider
         options={{
           smooth: true,
