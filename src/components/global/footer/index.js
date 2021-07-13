@@ -9,6 +9,7 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faTwitch } from '@fortawesome/free-brands-svg-icons';
+import { faHeadset } from '@fortawesome/free-solid-svg-icons';
 import styles from './footer.module.css';
 
 const Footer = () => {
@@ -104,6 +105,15 @@ const Footer = () => {
               aria-label="Twitch"
             >
               <FontAwesomeIcon icon={faTwitch} className={styles.i} />
+            </a>
+            <a
+              href="https://www.joinclubhouse.com/@waxmotif"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Clubhouse"
+              aria-label="Clubhouse"
+            >
+              <FontAwesomeIcon icon={faHeadset} className={styles.i} />
             </a>
           </div>
           <p className={styles.copyright}>
