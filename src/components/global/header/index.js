@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
 import MobileNav from '../mobile_nav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -27,10 +27,14 @@ const Header = ({ price }) => {
             <nav>
               <ul className={styles.menu}>
                 <li>
-                  <button className={styles.navBtn}>home</button>
+                  <Link href="/">
+                    <a className={styles.navBtn}>home</a>
+                  </Link>
                 </li>
                 <li>
-                  <button className={styles.navBtn}>store</button>
+                  <Link href="/store">
+                    <a className={styles.navBtn}>store</a>
+                  </Link>
                 </li>
                 <li>
                   <button className={styles.navBtn}>vip</button>
@@ -39,9 +43,7 @@ const Header = ({ price }) => {
             </nav>
           </div>
           <div className={styles.tickerContainer}>
-            <div className={styles.imgContainer}>
-              <Image src="/token.png" alt="token" layout="fill" />
-            </div>
+            <img src="/templered.png" alt="token" className={styles.img} />
             <a
               href="https://rally.io/creator/WAXM/"
               target="_blank"

@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import Matter from 'matter-js';
 import styles from './scene.module.css';
 
-const GravityScene = () => {
+const GravityScene = ({ xx = 20, columns = 5, rows = 2 }) => {
   const scene = useRef(null);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const GravityScene = () => {
       element: scene.current,
       engine: engine,
       options: {
-        width: 800,
+        width: 600,
         height: 400,
         wireframes: false,
         background: 'rgba(0,0,0,0)',
@@ -38,7 +38,7 @@ const GravityScene = () => {
     Runner.run(runner, engine);
 
     // add bodies
-    var stack = Composites.stack(20, 20, 10, 2, 0, 0, function (x, y) {
+    var stack = Composites.stack(xx, 20, columns, rows, 0, 0, function (x, y) {
       var sides = Math.round(Common.random(1, 8));
 
       // triangles can be a little unstable, so avoid until fixed
@@ -101,7 +101,7 @@ const GravityScene = () => {
 
     Composite.add(world, [
       // walls
-      // Bodies.rectangle(400, 0, 800, 50, {
+      // Bodies.rectangle(400, 0, 600, 50, {
       //   isStatic: true,
       //   render: {
       //     fillStyle: 'red',
@@ -109,7 +109,7 @@ const GravityScene = () => {
       //     opacity: '1',
       //   },
       // }),
-      Bodies.rectangle(400, 400, 800, 50, {
+      Bodies.rectangle(300, 400, 600, 50, {
         isStatic: true,
         render: {
           fillStyle: 'none',
@@ -117,7 +117,7 @@ const GravityScene = () => {
           opacity: '0',
         },
       }),
-      Bodies.rectangle(800, 300, 50, 400, {
+      Bodies.rectangle(600, 300, 50, 400, {
         isStatic: true,
         render: {
           fillStyle: 'none',
@@ -155,7 +155,7 @@ const GravityScene = () => {
     // fit the render viewport to the scene
     Render.lookAt(render, {
       min: { x: 0, y: 0 },
-      max: { x: 800, y: 400 },
+      max: { x: 600, y: 400 },
     });
 
     // context for MatterTools.Demo

@@ -65,10 +65,8 @@
   gap: 0.5em;
 }
 
-.imgContainer {
-  position: relative;
+.img {
   width: 60px;
-  height: 60px;
 }
 
 .ticker {
@@ -95,9 +93,8 @@
 }
 
 @media (max-width: 1600px) {
-  .imgContainer {
+  .img {
     width: 40px;
-    height: 40px;
   }
 }
 
@@ -115,8 +112,7 @@
 }
 
 @media (max-width: 425px) {
-  .imgContainer {
+  .img {
     width: 30px;
-    height: 30px;
   }
 }
