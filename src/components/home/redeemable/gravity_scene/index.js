@@ -12,7 +12,7 @@ const GravityScene = () => {
       Composites = Matter.Composites,
       Common = Matter.Common,
       // MouseConstraint = Matter.MouseConstraint,
-      Mouse = Matter.Mouse,
+      // Mouse = Matter.Mouse,
       Composite = Matter.Composite,
       Bodies = Matter.Bodies;
 
@@ -37,78 +37,38 @@ const GravityScene = () => {
     var runner = Runner.create();
     Runner.run(runner, engine);
 
+    var rest = 0.8;
+
     // add bodies
-    var stack = Composites.stack(20, 20, 10, 2, 0, 0, function (x, y) {
-      var sides = Math.round(Common.random(1, 8));
-
-      // triangles can be a little unstable, so avoid until fixed
-      sides = sides === 3 ? 4 : sides;
-
-      // round the edges of some bodies
-      var chamfer = null;
-      if (sides > 2 && Common.random() > 0.7) {
-        chamfer = {
-          radius: 10,
-        };
-      }
-
-      switch (Math.round(Common.random(0, 1))) {
-        case 0:
-          if (Common.random() < 0.8) {
-            return Bodies.rectangle(
-              x,
-              y,
-              Common.random(25, 50),
-              Common.random(25, 50),
-              {
-                chamfer: chamfer,
-                render: {
-                  fillStyle: `hsl(265, 75%, ${Math.floor(
-                    Math.random() * 25 + 25
-                  )}%)`,
-                },
-              }
-            );
-          } else {
-            return Bodies.rectangle(
-              x,
-              y,
-              Common.random(80, 120),
-              Common.random(25, 30),
-              {
-                chamfer: chamfer,
-                render: {
-                  fillStyle: `hsl(265, 75%, ${Math.floor(
-                    Math.random() * 25 + 25
-                  )}%)`,
-                },
-              }
-            );
-          }
-        case 1:
-          return Bodies.polygon(x, y, sides, Common.random(25, 50), {
-            chamfer: chamfer,
-            render: {
-              fillStyle: `hsl(265, 75%, ${Math.floor(
-                Math.random() * 25 + 25
-              )}%)`,
-            },
-          });
-      }
+    var stack = Composites.stack(280, 20, 4, 4, 0, 0, function (x, y) {
+      return Bodies.circle(x, y, 35, {
+        restitution: rest,
+        friction: 0.1,
+        render: {
+          fillStyle: 'purple',
+          sprite: {
+            texture: '/waxcoin.svg',
+            xScale: 0.452,
+            yScale: 0.452,
+          },
+        },
+      });
     });
 
     Composite.add(world, stack);
 
     Composite.add(world, [
       // walls
-      // Bodies.rectangle(400, 0, 800, 50, {
-      //   isStatic: true,
-      //   render: {
-      //     fillStyle: 'red',
-      //     strokeStyle: 'none',
-      //     opacity: '1',
-      //   },
-      // }),
+      // top
+      Bodies.rectangle(400, 0, 800, 50, {
+        isStatic: true,
+        render: {
+          fillStyle: 'none',
+          strokeStyle: 'none',
+          opacity: '0',
+        },
+      }),
+      // bottom
       Bodies.rectangle(400, 400, 800, 50, {
         isStatic: true,
         render: {
@@ -117,7 +77,7 @@ const GravityScene = () => {
           opacity: '0',
         },
       }),
-      Bodies.rectangle(800, 300, 50, 400, {
+      Bodies.rectangle(800, 300, 50, 800, {
         isStatic: true,
         render: {
           fillStyle: 'none',
@@ -125,7 +85,15 @@ const GravityScene = () => {
           opacity: '0',
         },
       }),
-      Bodies.rectangle(0, 300, 50, 400, {
+      Bodies.rectangle(0, 300, 50, 800, {
+        isStatic: true,
+        render: {
+          fillStyle: 'none',
+          strokeStyle: 'none',
+          opacity: '0',
+        },
+      }),
+      Bodies.rectangle(400, 293, 140, 47, {
         isStatic: true,
         render: {
           fillStyle: 'none',
