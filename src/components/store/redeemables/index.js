@@ -9,14 +9,14 @@ const Redeemables = () => {
           <h2 className={styles.title}>redeemables</h2>
           <div className={styles.grid}>
             <Redeemable
-              xx={250}
+              xx={270}
               columns={1}
               rows={1}
               title="15 $WAXM coins"
               description="Top spot on HOW playlist for 1 week. (1500+ followers)"
             />
             <Redeemable
-              xx={250}
+              xx={230}
               columns={2}
               rows={1}
               title="15 $WAXM coins per year"
@@ -44,7 +44,7 @@ const Redeemables = () => {
               description="VIP club show tickets for you and a friend & meet n greet."
             />
             <Redeemable
-              xx={180}
+              xx={220}
               columns={3}
               rows={2}
               title="1500 $WAXM coins"
