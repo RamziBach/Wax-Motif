@@ -37,7 +37,9 @@ const Header = ({ price }) => {
                   </Link>
                 </li>
                 <li>
-                  <button className={styles.navBtn}>vip</button>
+                  <Link href="/vip">
+                    <a className={styles.navBtn}>vip</a>
+                  </Link>
                 </li>
               </ul>
             </nav>
