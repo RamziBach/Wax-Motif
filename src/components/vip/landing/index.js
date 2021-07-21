@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import styles from './index.module.css';
 
 const GatedContent = () => {
@@ -42,11 +43,19 @@ const GatedContent = () => {
 };
 
 const Landing = () => {
+  const router = useRouter();
+
   return (
     <div data-scroll-section>
       <section className={styles.landing}>
         <div className={styles.container}>
           <GatedContent />
+          <button
+            onClick={() => router.push('/api/auth')}
+            className="btn-border"
+          >
+            log in
+          </button>
         </div>
       </section>
     </div>
