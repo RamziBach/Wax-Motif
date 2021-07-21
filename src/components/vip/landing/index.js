@@ -39,7 +39,7 @@ const GatedContent = () => {
       </h2>
     );
 
-  return <h2 className={styles.title}>Welcome</h2>;
+  return <h2 className={styles.title}>Welcome, VIP coming soon !</h2>;
 };
 
 const Landing = () => {
