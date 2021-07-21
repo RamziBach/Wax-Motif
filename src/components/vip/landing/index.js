@@ -49,13 +49,15 @@ const Landing = () => {
     <div data-scroll-section>
       <section className={styles.landing}>
         <div className={styles.container}>
-          <GatedContent />
-          <button
-            onClick={() => router.push('/api/auth')}
-            className="btn-border"
-          >
-            log in
-          </button>
+          <div className={styles.parent}>
+            <GatedContent />
+            <button
+              onClick={() => router.push('/api/auth')}
+              className="btn-border"
+            >
+              log in
+            </button>
+          </div>
         </div>
       </section>
     </div>
