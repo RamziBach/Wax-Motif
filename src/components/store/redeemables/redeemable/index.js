@@ -1,7 +1,7 @@
 import Scene from './gravity_scene';
 import styles from './redeemable.module.css';
 
-const Redeemable = ({ xx, columns, rows, title, description }) => {
+const Redeemable = ({ xx, columns, rows, title, description, link }) => {
   return (
     <div className={styles.grandParent}>
       <div className={styles.parent}>
@@ -9,7 +9,14 @@ const Redeemable = ({ xx, columns, rows, title, description }) => {
         <div className={styles.zIndex}>
           <h3 className={styles.rewardTitle}>{title}</h3>
           <p className={styles.rewardDescription}>{description}</p>
-          <button className="btn-border">redeem</button>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-border"
+          >
+            redeem
+          </a>
         </div>
       </div>
     </div>
