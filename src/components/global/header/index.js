@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styles from './header.module.css';
 
-const Header = ({ price }) => {
+const Header = ({ price, marginBottom = '5em' }) => {
   const [isMobileDisplayOpen, setIsMobileDisplayOpen] = useState(false);
 
   const handleMobileClick = () =>
@@ -16,7 +16,7 @@ const Header = ({ price }) => {
   }, []);
 
   return (
-    <header className={styles.header}>
+    <header style={{ marginBottom }} className={styles.header}>
       <div className={styles.container}>
         <div className={styles.parent}>
           <div className={styles.titleContainer}>
@@ -52,6 +52,7 @@ const Header = ({ price }) => {
               rel="noopener noreferrer"
               className={styles.ticker}
               data-text={`$${price}`}
+              title="$WAXM price"
             >
               ${price}
             </a>

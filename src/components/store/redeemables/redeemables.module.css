@@ -7,6 +7,15 @@
   margin: 0 auto;
 }
 
+.imgContainer {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.neko {
+  width: 8em;
+}
+
 .title {
   text-transform: uppercase;
   line-height: 1;
