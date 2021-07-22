@@ -69,17 +69,129 @@
   width: 60px;
 }
 
+@keyframes anim1 {
+  0%,
+  9% {
+    clip-path: inset(14% 0% 23% 0%);
+  }
+  10%,
+  19% {
+    clip-path: inset(11% 0% 2% 0%);
+  }
+  20%,
+  29% {
+    clip-path: inset(43% 0% 53% 0%);
+  }
+  30%,
+  39% {
+    clip-path: inset(21% 0% 33% 0%);
+  }
+  40%,
+  49% {
+    clip-path: inset(24% 0% 3% 0%);
+  }
+  50%,
+  59% {
+    clip-path: inset(12% 0% 13% 0%);
+  }
+  60%,
+  69% {
+    clip-path: inset(13% 0% 11% 0%);
+  }
+  70%,
+  79% {
+    clip-path: inset(44% 0% 23% 0%);
+  }
+  80%,
+  89% {
+    clip-path: inset(14% 0% 93% 0%);
+  }
+  90%,
+  99% {
+    clip-path: inset(22% 0% 13% 0%);
+  }
+  100% {
+    clip-path: inset(33% 0% 23% 0%);
+  }
+}
+
+@keyframes anim2 {
+  0%,
+  9% {
+    clip-path: inset(23% 0% 25% 0%);
+  }
+  10%,
+  19% {
+    clip-path: inset(21% 0% 53% 0%);
+  }
+  20%,
+  29% {
+    clip-path: inset(55% 0% 53% 0%);
+  }
+  30%,
+  39% {
+    clip-path: inset(62% 0% 21% 0%);
+  }
+  40%,
+  49% {
+    clip-path: inset(31% 0% 32% 0%);
+  }
+  50%,
+  59% {
+    clip-path: inset(32% 0% 73% 0%);
+  }
+  60%,
+  69% {
+    clip-path: inset(64% 0% 22% 0%);
+  }
+  70%,
+  79% {
+    clip-path: inset(31% 0% 6% 0%);
+  }
+  80%,
+  89% {
+    clip-path: inset(64% 0% 52% 0%);
+  }
+  90%,
+  99% {
+    clip-path: inset(48% 0% 41% 0%);
+  }
+  100% {
+    clip-path: inset(92% 0% 1% 0%);
+  }
+}
+
 .ticker {
   font-size: var(--fs-h3);
   font-weight: 700;
   margin: 0;
   line-height: 1;
-  transition: all 0.3s;
+  position: relative;
+  /* transition: all 0.3s; */
 }
 
-.ticker:hover,
+/* .ticker:hover,
 .ticker:focus {
   color: var(--clr-accent);
+} */
+
+.ticker:hover::after,
+.ticker:hover::before {
+  content: attr(data-text);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  font-family: var(--fs-primary);
+  position: absolute;
+}
+.ticker:hover::after {
+  text-shadow: -2px 2px var(--clr-accent2), 10px -10px var(--clr-accent);
+  left: 2px;
+  animation: anim2 2s infinite linear alternate-reverse;
+}
+.ticker:hover::before {
+  /* text-shadow: 2px -2px var(--clr-accent2); */
+  left: -2px;
+  animation: anim1 5s infinite linear alternate-reverse;
 }
 
 .mobileContainer {

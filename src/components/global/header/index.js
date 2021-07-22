@@ -51,6 +51,7 @@ const Header = ({ price }) => {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.ticker}
+              data-text={`$${price}`}
             >
               ${price}
             </a>
