@@ -17,9 +17,16 @@ const Footer = () => {
     <div data-scroll-section>
       <footer className={styles.footer}>
         <div className={styles.parent}>
+          {/* <Image
+            src="/templered.png"
+            alt="temple"
+            layout="intrinsic"
+            width="100"
+            height="94.2"
+          /> */}
           <Image
             src="/neko.svg"
-            alt="temple"
+            alt="cat"
             layout="intrinsic"
             width="100"
             height="130"
