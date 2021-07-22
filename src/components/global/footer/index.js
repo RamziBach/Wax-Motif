@@ -18,11 +18,11 @@ const Footer = () => {
       <footer className={styles.footer}>
         <div className={styles.parent}>
           <Image
-            src="/templered.png"
+            src="/neko.svg"
             alt="temple"
             layout="intrinsic"
             width="100"
-            height="94.2"
+            height="130"
           />
           <div className={styles.socialsContainer}>
             <a

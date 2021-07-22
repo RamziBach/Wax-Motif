@@ -6,9 +6,6 @@ const Redeemables = () => {
     <div data-scroll-section>
       <section className={styles.redeemables}>
         <div className={styles.container}>
-          <div className={styles.imgContainer}>
-            <img src="/neko.svg" alt="cat" className={styles.neko} />
-          </div>
           <h2 className={styles.title}>redeemables</h2>
           <div className={styles.grid}>
             <Redeemable

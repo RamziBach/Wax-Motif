@@ -29,7 +29,7 @@ const Home = ({ price }) => {
         containerRef={containerRef}
       >
         <main data-scroll-container ref={containerRef}>
-          <Header price={price} marginBottom="1em" />
+          <Header price={price} />
           <Redeemables />
           <Footer />
         </main>
