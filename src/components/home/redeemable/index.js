@@ -39,11 +39,9 @@ const Redeemable = () => {
               <div className={styles.zIndex}>
                 <h3 className={styles.rewardTitle}>Redeem your $WAXM</h3>
                 <p className={styles.rewardDescription}>
-                  Duis velit commodo velit nisi amet eu sit esse ea do. Enim ex
-                  qui cupidatat reprehenderit ad excepteur et elit Lorem.
-                  Laborum reprehenderit proident officia Lorem ipsum sunt.
-                  Reprehenderit eiusmod Lorem mollit proident voluptate amet
-                  voluptate dolore.
+                  Want a 1:1 call with Wax? How about going to a festival with
+                  Wax for a day $WAXM can be redeemed for really dope
+                  experiences.
                 </p>
                 <button className="btn-border">store page</button>
               </div>
