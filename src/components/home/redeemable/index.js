@@ -42,6 +42,7 @@ const Redeemable = () => {
                   Want a 1:1 call with Wax? How about going to a festival with
                   Wax for a day $WAXM can be redeemed for really dope
                   experiences.
+                  <br /> <br /> <br />{' '}
                 </p>
                 <button className="btn-border">store page</button>
               </div>
