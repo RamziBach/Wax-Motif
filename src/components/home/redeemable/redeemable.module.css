@@ -44,5 +44,5 @@
 .rewardDescription {
   color: var(--clr-rgba);
   max-width: 60ch;
-  margin: 2em 0;
+  margin: 2em 0 5.4em 0;
 }
