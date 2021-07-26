@@ -1,33 +1,48 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import useSWR from 'swr';
 import styles from './index.module.css';
 
+const fetcher = url => fetch(url).then(r => r.json());
+
 const GatedContent = () => {
-  const [balance, setBalance] = useState();
+  // const [balance, setBalance] = useState();
+  const { data, error } = useSWR('/api/todos', fetcher);
 
-  const getBalance = async () => {
-    try {
-      const res = await fetch('/api/auth/balance');
-      const data = await res.json();
-      setBalance(data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  // const getBalance = async () => {
+  //   try {
+  //     const res = await fetch('/api/auth/balance');
+  //     const data = await res.json();
+  //     setBalance(data);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
-  useEffect(() => {
-    getBalance();
-  }, []);
+  // useEffect(() => {
+  //   getBalance();
+  // }, []);
 
-  if (balance === undefined || balance.error)
+  // if (balance === undefined || balance.error)
+  //   return (
+  //     <h2 className={styles.title}>
+  //       You must be logged in to view this content.
+  //     </h2>
+  //   );
+
+  if (error)
     return (
       <h2 className={styles.title}>
         You must be logged in to view this content.
       </h2>
     );
 
-  const hasWaxm = balance.some(item => item.coinKind === 'WAXM');
-  const waxmBalance = balance.find(item => item.coinKind === 'WAXM');
+  if (!data) return <h2 className={styles.title}>Loading...</h2>;
+
+  // const hasWaxm = balance.some(item => item.coinKind === 'WAXM');
+  const hasWaxm = data.some(item => item.coinKind === 'WAXM');
+  // const waxmBalance = balance.find(item => item.coinKind === 'WAXM');
+  const waxmBalance = data.find(item => item.coinKind === 'WAXM');
 
   if (!hasWaxm)
     return <h2 className={styles.title}>You do not own any $WAXM coin.</h2>;
