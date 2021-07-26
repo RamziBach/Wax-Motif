@@ -194,6 +194,33 @@
   animation: anim1 5s infinite linear alternate-reverse;
 }
 
+.nonHoverGlitchEffect {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  position: relative;
+}
+
+.nonHoverGlitchEffect::after,
+.nonHoverGlitchEffect::before {
+  content: attr(data-text);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  font-family: var(--fs-primary);
+  position: absolute;
+}
+.nonHoverGlitchEffect::after {
+  text-shadow: -2px 2px var(--clr-accent2), 10px -10px var(--clr-accent);
+  left: 2px;
+  animation: anim2 2s infinite linear alternate-reverse;
+}
+.nonHoverGlitchEffect::before {
+  /* text-shadow: 2px -2px var(--clr-accent2); */
+  left: -2px;
+  animation: anim1 2s infinite linear alternate-reverse;
+}
+
 .mobileContainer {
   flex: 1;
   display: none;

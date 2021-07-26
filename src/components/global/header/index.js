@@ -7,12 +7,21 @@ import styles from './header.module.css';
 
 const Header = ({ price, marginBottom = '5em' }) => {
   const [isMobileDisplayOpen, setIsMobileDisplayOpen] = useState(false);
+  const [tickerClassName, setTickerClassName] = useState(`${styles.ticker}`);
 
   const handleMobileClick = () =>
     setIsMobileDisplayOpen(prevState => !prevState);
 
   useEffect(() => {
     console.log('Website developed by Ramzi Bach - www.ramzibach.com');
+
+    setInterval(() => {
+      setTickerClassName(`${styles.ticker} ${styles.nonHoverGlitchEffect}`);
+    }, 8000);
+
+    setInterval(() => {
+      setTickerClassName(`${styles.ticker}`);
+    }, 10000);
   }, []);
 
   return (
@@ -50,7 +59,7 @@ const Header = ({ price, marginBottom = '5em' }) => {
               href="https://rally.io/creator/WAXM/"
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.ticker}
+              className={tickerClassName}
               data-text={`$${price}`}
               title="$WAXM price"
             >
