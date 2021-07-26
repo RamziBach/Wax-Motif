@@ -7,7 +7,7 @@ const fetcher = url => fetch(url).then(r => r.json());
 
 const GatedContent = () => {
   // const [balance, setBalance] = useState();
-  const { data, error } = useSWR('/api/todos', fetcher);
+  const { data, error } = useSWR('/api/auth/balance', fetcher);
 
   // const getBalance = async () => {
   //   try {
