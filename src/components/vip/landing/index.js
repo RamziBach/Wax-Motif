@@ -6,6 +6,7 @@ const GatedContent = () => {
   const router = useRouter();
   const [balance, setBalance] = useState();
 
+  // Gets the balance of the user
   const getBalance = async () => {
     try {
       const res = await fetch('/api/auth/balance');
@@ -16,12 +17,15 @@ const GatedContent = () => {
     }
   };
 
+  // Gets the balance on mount
   useEffect(() => {
     getBalance();
   }, []);
 
+  // Loading state
   if (!balance) return <h2 className={styles.title}>Loading...</h2>;
 
+  // State before logging in
   if (balance === undefined || balance.error) {
     return (
       <>
@@ -35,13 +39,23 @@ const GatedContent = () => {
     );
   }
 
-  const hasWaxm = balance.some(item => item.coinKind === 'WAXM');
-  const waxmBalance = balance.find(item => item.coinKind === 'WAXM');
+  let hasWaxm;
+  let waxmBalance;
 
-  if (!hasWaxm)
+  // Set variables if conditions are met
+  if (balance !== undefined || balance !== null) {
+    // Retruns true if user owns WAXM
+    hasWaxm = balance.some(item => item.coinKind === 'WAXM');
+    // Finds and returns the WAXM object
+    waxmBalance = balance.find(item => item.coinKind === 'WAXM');
+  }
+
+  // Condition when not owning any WAXM coins
+  if (hasWaxm !== undefined && !hasWaxm)
     return <h2 className={styles.title}>You do not own any $WAXM coin.</h2>;
 
-  if (hasWaxm && waxmBalance.coinBalance < 10)
+  // Condition when not owning enough WAXM coins
+  if (hasWaxm !== undefined && hasWaxm && waxmBalance.coinBalance <= 10)
     return (
       <h2 className={styles.title}>
         You must own 10 or more $WAXM coins to view this content.
