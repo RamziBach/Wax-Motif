@@ -62,6 +62,7 @@ const GatedContent = () => {
       </h2>
     );
 
+  // Error state
   if (balance.error) {
     return (
       <>
