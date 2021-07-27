@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import styles from './index.module.css';
 
 const GatedContent = () => {
+  const router = useRouter();
   const [balance, setBalance] = useState();
 
   const getBalance = async () => {
@@ -21,12 +22,18 @@ const GatedContent = () => {
 
   if (!balance) return <h2 className={styles.title}>Loading...</h2>;
 
-  if (balance === undefined || balance.error)
+  if (balance === undefined || balance.error) {
     return (
-      <h2 className={styles.title}>
-        You must be logged in to view this content.
-      </h2>
+      <>
+        <h2 className={styles.title}>
+          You must be logged in to view this content.
+        </h2>
+        <button onClick={() => router.push('/api/auth')} className="btn-border">
+          log in
+        </button>
+      </>
     );
+  }
 
   const hasWaxm = balance.some(item => item.coinKind === 'WAXM');
   const waxmBalance = balance.find(item => item.coinKind === 'WAXM');
@@ -45,20 +52,18 @@ const GatedContent = () => {
 };
 
 const Landing = () => {
-  const router = useRouter();
-
   return (
     <div data-scroll-section>
       <section className={styles.landing}>
         <div className={styles.container}>
           <div className={styles.parent}>
             <GatedContent />
-            <button
+            {/* <button
               onClick={() => router.push('/api/auth')}
               className="btn-border"
             >
               log in
-            </button>
+            </button> */}
           </div>
         </div>
       </section>
