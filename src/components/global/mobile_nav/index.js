@@ -1,5 +1,6 @@
-import styles from './mobileNav.module.css';
+import Link from 'next/link';
 import Image from 'next/image';
+import styles from './mobileNav.module.css';
 
 const MobileNav = ({ price, display }) => {
   return (
@@ -9,9 +10,15 @@ const MobileNav = ({ price, display }) => {
     >
       <div className={styles.container}>
         <div className={styles.parent}>
-          <a className={styles.btn}>home</a>
-          <a className={styles.btn}>store</a>
-          <a className={styles.btn}>vip</a>
+          <Link href="/">
+            <a className={styles.btn}>home</a>
+          </Link>
+          <Link href="/store">
+            <a className={styles.btn}>store</a>
+          </Link>
+          <Link href="/vip">
+            <a className={styles.btn}>vip</a>
+          </Link>
           <div className={styles.waxCoin} aria-label="Waxm coin price">
             <div className={styles.logo}>
               <Image src="/token.png" alt="token" layout="fill" />
