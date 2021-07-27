@@ -62,6 +62,17 @@ const GatedContent = () => {
       </h2>
     );
 
+  if (balance.error) {
+    return (
+      <>
+        <h2 className={styles.title}>Something went wrong, try again.</h2>
+        <button onClick={() => router.push('/api/auth')} className="btn-border">
+          log in
+        </button>
+      </>
+    );
+  }
+
   return <h2 className={styles.title}>Welcome, VIP coming soon !</h2>;
 };
 
