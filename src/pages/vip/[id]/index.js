@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import Seo from '@components/global/seo';
 import Header from '@components/global/header';
-import Landing from '@components/vip/landing';
+import Gated from '@components/vip/gated';
 
 const Home = ({ price }) => {
   const router = useRouter();
@@ -32,7 +32,7 @@ const Home = ({ price }) => {
       >
         <main data-scroll-container ref={containerRef}>
           <Header price={price} />
-          <Landing id={id} />
+          <Gated id={id} />
         </main>
       </LocomotiveScrollProvider>
     </>
