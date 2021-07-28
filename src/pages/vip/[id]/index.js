@@ -41,7 +41,7 @@ const Home = ({ price }) => {
 
 export default Home;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const response = await fetch(
     'https://api.rally.io/v1/creator_coins/WAXM/price'
   );
@@ -50,6 +50,5 @@ export async function getStaticProps() {
 
   return {
     props: { price },
-    revalidate: 30,
   };
 }
