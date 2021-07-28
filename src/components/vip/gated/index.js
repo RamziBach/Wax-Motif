@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import styles from './landing.module.css';
+import styles from './gated.module.css';
 
 const GatedContent = ({ id }) => {
   const router = useRouter();
