@@ -55,7 +55,7 @@ const GatedContent = () => {
     return <h2 className={styles.title}>You do not own any $WAXM coin.</h2>;
 
   // Condition when not owning enough WAXM coins
-  if (hasWaxm !== undefined && hasWaxm && waxmBalance.coinBalance <= 10)
+  if (hasWaxm !== undefined && hasWaxm && waxmBalance.coinBalance < 10)
     return (
       <h2 className={styles.title}>
         You must own 10 or more $WAXM coins to view this content.
@@ -74,7 +74,17 @@ const GatedContent = () => {
     );
   }
 
-  return <h2 className={styles.title}>Welcome, VIP coming soon !</h2>;
+  if (hasWaxm !== undefined && hasWaxm && waxmBalance.coinBalance >= 10)
+    return <h2 className={styles.title}>Welcome, VIP coming soon !</h2>;
+
+  return (
+    <>
+      <h2 className={styles.title}>Something went wrong, try again.</h2>
+      <button onClick={() => router.push('/api/auth')} className="btn-border">
+        log in
+      </button>
+    </>
+  );
 };
 
 const Landing = () => {
