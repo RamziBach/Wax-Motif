@@ -25,11 +25,8 @@ const GatedContent = () => {
   // Loading state
   if (!balance) return <h2 className={styles.title}>Loading...</h2>;
 
-  const hasError = balance.some(item => item.error);
-  const hasErrors = balance.some(item => item.errors);
-
   // State before logging in
-  if (balance === undefined || hasError) {
+  if (balance === undefined || balance.error) {
     return (
       <>
         <h2 className={styles.title}>
@@ -43,7 +40,7 @@ const GatedContent = () => {
   }
 
   // Error state
-  if (hasErrors) {
+  if (balance === undefined || balance.errors) {
     return (
       <>
         <h2 className={styles.title}>Something went wrong, try again.</h2>
@@ -54,16 +51,13 @@ const GatedContent = () => {
     );
   }
 
-  let hasWaxm;
-  let waxmBalance;
+  // let hasWaxm;
+  // let waxmBalance;
 
-  // Set variables if conditions are met
-  if (balance !== undefined || balance !== null || !hasError || !hasErrors) {
-    // Returns true if user owns WAXM
-    hasWaxm = balance.some(item => item.coinKind === 'WAXM');
-    // Finds and returns the WAXM object
-    waxmBalance = balance.find(item => item.coinKind === 'WAXM');
-  }
+  // Returns true if user owns WAXM
+  const hasWaxm = balance.some(item => item.coinKind === 'WAXM');
+  // Finds and returns the WAXM object
+  const waxmBalance = balance.find(item => item.coinKind === 'WAXM');
 
   // Condition when not owning any WAXM coins
   if (hasWaxm !== undefined && !hasWaxm)
