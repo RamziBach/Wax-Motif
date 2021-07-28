@@ -26,7 +26,7 @@ const GatedContent = () => {
   if (!balance) return <h2 className={styles.title}>Loading...</h2>;
 
   // State before logging in
-  if (balance === undefined) {
+  if (balance === undefined || balance.error) {
     return (
       <>
         <h2 className={styles.title}>
@@ -39,12 +39,24 @@ const GatedContent = () => {
     );
   }
 
+  // Error state
+  // if (balance.error) {
+  //   return (
+  //     <>
+  //       <h2 className={styles.title}>Something went wrong, try again.</h2>
+  //       <button onClick={() => router.push('/api/auth')} className="btn-border">
+  //         log in
+  //       </button>
+  //     </>
+  //   );
+  // }
+
   let hasWaxm;
   let waxmBalance;
 
   // Set variables if conditions are met
-  if (balance !== undefined || balance !== null) {
-    // Retruns true if user owns WAXM
+  if (balance !== undefined || balance !== null || !balance.error) {
+    // Returns true if user owns WAXM
     hasWaxm = balance.some(item => item.coinKind === 'WAXM');
     // Finds and returns the WAXM object
     waxmBalance = balance.find(item => item.coinKind === 'WAXM');
@@ -61,18 +73,6 @@ const GatedContent = () => {
         You must own 10 or more $WAXM coins to view this content.
       </h2>
     );
-
-  // Error state
-  if (balance.message === 'non-UUID ID') {
-    return (
-      <>
-        <h2 className={styles.title}>Something went wrong, try again.</h2>
-        <button onClick={() => router.push('/api/auth')} className="btn-border">
-          log in
-        </button>
-      </>
-    );
-  }
 
   // See gated content if user has 10 or more $WAXM coins
   if (hasWaxm !== undefined && hasWaxm && waxmBalance.coinBalance >= 10)
