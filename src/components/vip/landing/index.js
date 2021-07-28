@@ -25,8 +25,11 @@ const GatedContent = () => {
   // Loading state
   if (!balance) return <h2 className={styles.title}>Loading...</h2>;
 
+  const hasError = balance.some(item => item.error);
+  const hasErrors = balance.some(item => item.errors);
+
   // State before logging in
-  if (balance === undefined || balance.error) {
+  if (balance === undefined || hasError) {
     return (
       <>
         <h2 className={styles.title}>
@@ -40,21 +43,19 @@ const GatedContent = () => {
   }
 
   // Error state
-  // if (balance.error) {
-  //   return (
-  //     <>
-  //       <h2 className={styles.title}>Something went wrong, try again.</h2>
-  //       <button onClick={() => router.push('/api/auth')} className="btn-border">
-  //         log in
-  //       </button>
-  //     </>
-  //   );
-  // }
+  if (hasErrors) {
+    return (
+      <>
+        <h2 className={styles.title}>Something went wrong, try again.</h2>
+        <button onClick={() => router.push('/api/auth')} className="btn-border">
+          log in
+        </button>
+      </>
+    );
+  }
 
   let hasWaxm;
   let waxmBalance;
-  const hasError = balance.some(item => item.error);
-  const hasErrors = balance.some(item => item.errors);
 
   // Set variables if conditions are met
   if (balance !== undefined || balance !== null || !hasError || !hasErrors) {
