@@ -53,9 +53,11 @@ const GatedContent = () => {
 
   let hasWaxm;
   let waxmBalance;
+  const hasError = balance.some(item => item.error);
+  const hasErrors = balance.some(item => item.errors);
 
   // Set variables if conditions are met
-  if (balance !== undefined || balance !== null || !balance.error) {
+  if (balance !== undefined || balance !== null || !hasError || !hasErrors) {
     // Returns true if user owns WAXM
     hasWaxm = balance.some(item => item.coinKind === 'WAXM');
     // Finds and returns the WAXM object
