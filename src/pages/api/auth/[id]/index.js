@@ -2,7 +2,7 @@ import {
   access_token,
   httpGet,
   rally_api_url,
-} from '../../../../utils/helperFunctions';
+} from '../../../../../utils/helperFunctions';
 
 const getUserBalance = async (userId, res) => {
   if (!access_token) {
