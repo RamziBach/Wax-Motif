@@ -39,7 +39,7 @@ export default async (req, res) => {
     cookies.set('rnbUserId', userData.rnbUserId, {
       httpOnly: true,
     });
-    res.redirect('/vip');
+    res.redirect(`/vip/${userData.rnbUserId}`);
   } catch (err) {
     res.status(500);
   }

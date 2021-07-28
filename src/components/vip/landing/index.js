@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import styles from './index.module.css';
 
-const GatedContent = () => {
+const GatedContent = ({ id }) => {
   const router = useRouter();
   const [balance, setBalance] = useState();
 
   // Gets the balance of the user
   const getBalance = async () => {
     try {
-      const res = await fetch('/api/auth/balance');
+      const res = await fetch(`/api/auth/${id}`);
       const data = await res.json();
       setBalance(data);
     } catch (err) {
@@ -40,7 +40,7 @@ const GatedContent = () => {
   }
 
   // Error state
-  if (balance === undefined || balance.errors) {
+  if (balance.errors) {
     return (
       <>
         <h2 className={styles.title}>Something went wrong, try again.</h2>
@@ -86,13 +86,13 @@ const GatedContent = () => {
   );
 };
 
-const Landing = () => {
+const Landing = ({ id }) => {
   return (
     <div data-scroll-section>
       <section className={styles.landing}>
         <div className={styles.container}>
           <div className={styles.parent}>
-            <GatedContent />
+            <GatedContent id={id} />
           </div>
         </div>
       </section>
