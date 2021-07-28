@@ -26,7 +26,7 @@ const GatedContent = () => {
   if (!balance) return <h2 className={styles.title}>Loading...</h2>;
 
   // State before logging in
-  if (balance === undefined || balance.error) {
+  if (balance === undefined) {
     return (
       <>
         <h2 className={styles.title}>
@@ -63,7 +63,7 @@ const GatedContent = () => {
     );
 
   // Error state
-  if (balance.error) {
+  if (balance.message === 'non-UUID ID') {
     return (
       <>
         <h2 className={styles.title}>Something went wrong, try again.</h2>
@@ -74,9 +74,11 @@ const GatedContent = () => {
     );
   }
 
+  // See gated content if user has 10 or more $WAXM coins
   if (hasWaxm !== undefined && hasWaxm && waxmBalance.coinBalance >= 10)
     return <h2 className={styles.title}>Welcome, VIP coming soon !</h2>;
 
+  // Else return
   return (
     <>
       <h2 className={styles.title}>Something went wrong, try again.</h2>
