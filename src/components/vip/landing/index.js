@@ -13,7 +13,7 @@ const Landing = () => {
           <div className={styles.parent}>
             <FontAwesomeIcon icon={faLock} className={styles.lock} />
             <h2 className={styles.title}>
-              You must be logged <br /> in to view this content.
+              You must be signed-in <br /> to view this content.
             </h2>
             <button
               onClick={() => router.push('/api/auth')}

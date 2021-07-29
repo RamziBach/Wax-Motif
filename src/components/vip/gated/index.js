@@ -30,7 +30,7 @@ const GatedContent = ({ id }) => {
     return (
       <>
         <h2 className={styles.title}>
-          You must be logged in to view this content.
+          You must be signed-in <br /> to view this content.
         </h2>
         <button onClick={() => router.push('/api/auth')} className="btn-border">
           log in
