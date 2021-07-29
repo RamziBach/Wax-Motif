@@ -15,7 +15,13 @@
   text-align: center;
 }
 
+.lock {
+  font-size: var(--fs-h2);
+  color: var(--clr-accent);
+}
+
 .title {
   text-align: center;
   color: var(--clr-accent);
+  line-height: 1.1;
 }

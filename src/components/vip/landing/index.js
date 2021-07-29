@@ -1,4 +1,6 @@
 import { useRouter } from 'next/router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 import styles from './landing.module.css';
 
 const Landing = () => {
@@ -9,8 +11,9 @@ const Landing = () => {
       <section className={styles.landing}>
         <div className={styles.container}>
           <div className={styles.parent}>
+            <FontAwesomeIcon icon={faLock} className={styles.lock} />
             <h2 className={styles.title}>
-              You must be logged in to view this content.
+              You must be logged <br /> in to view this content.
             </h2>
             <button
               onClick={() => router.push('/api/auth')}
