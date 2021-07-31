@@ -30,7 +30,7 @@ export default async (req, res) => {
   const userId = cookies.get('rnbUserId');
 
   if (id !== userId) {
-    return res.status(500).json('You are not authorized to view this content.');
+    return res.status(500).json({ error: 'You shall not pass!' });
   }
 
   try {
