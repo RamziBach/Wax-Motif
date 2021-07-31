@@ -20,3 +20,8 @@
   color: var(--clr-accent);
   line-height: 1.1;
 }
+
+.lock {
+  font-size: var(--fs-h2);
+  color: var(--clr-accent);
+}
