@@ -1,3 +1,4 @@
+import Cookies from 'cookies';
 import {
   access_token,
   httpGet,
@@ -24,6 +25,13 @@ export default async (req, res) => {
   const {
     query: { id },
   } = req;
+
+  const cookies = new Cookies(req, res);
+  const userId = cookies.get('rnbUserId');
+
+  if (id !== userId) {
+    return res.status(500).json('You are not authorized to view this content.');
+  }
 
   try {
     const balanceData = await getUserBalance(id, res);

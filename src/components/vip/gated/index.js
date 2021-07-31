@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 import styles from './gated.module.css';
 
 const GatedContent = ({ id }) => {
@@ -29,6 +31,7 @@ const GatedContent = ({ id }) => {
   if (balance === undefined || balance.error) {
     return (
       <>
+        <FontAwesomeIcon icon={faLock} className={styles.lock} />
         <h2 className={styles.title}>
           You must be signed-in <br /> to view this content.
         </h2>
