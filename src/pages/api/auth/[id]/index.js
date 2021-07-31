@@ -30,7 +30,7 @@ export default async (req, res) => {
   const userId = cookies.get('rnbUserId');
 
   if (id !== userId) {
-    return res.status(500).json({ error: 'You shall not pass!' });
+    return res.status(401).json({ error: 'You shall not pass!' });
   }
 
   try {
