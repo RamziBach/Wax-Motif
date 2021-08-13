@@ -18,7 +18,7 @@ const Seo = ({ title = 'WAX MOTIF' }) => {
         name="keywords"
         content="social, money, token, cryptocurrency, music, producer, dj, wax, motif, wax motif, waxgang"
       />
-      <meta property="og:url" content="https://www.waxmoney.com" key="ogurl" />
+      <meta property="og:url" content="https://waxmoney.com" key="ogurl" />
       <meta property="og:image" content="/ogimage.jpg" key="ogimage" />
       <meta property="og:image:width" content="1623" />
       <meta property="og:image:height" content="913" />
